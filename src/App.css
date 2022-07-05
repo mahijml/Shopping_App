@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider{
+    width: 100%;
+}
+.slider_Items{
+    height: 550px;
+    display: none;
+    overflow: hidden;
+}
+.prev , .next {
+    position: absolute;
+    top:50%;
+    transform: translate(0 , -50%);
+    font-size: 3rem;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.1s;
+    user-select: none;
+    margin:0 20px;
+}
+.prev:hover, .next:hover {
+    color: #3498db;
+}
+.next {
+    right: 0;
+}
+.dotsbox {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 5%;
+    cursor: pointer;
+}
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.active , .dot:hover {
+    border-color: #3498db;
+}
+
+.txt {
+    position: absolute;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 35px;
+    top: 40%;
+    left: 15%;
+    z-index : 1;
+}
+
+.txt  h1 {
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+}
+.txt p {
+    font-weight: bold;
+    font-size: 20px;
+}
+.slider_Items img {
+    height: 100%;
+    width :100%;
+    transform: scale(1.5 , 1.5);
+    animation: zoomin 40s ;
+    -webkit-animation: zoomin 40s;
+}
+ @keyframes zoomin {
+    from { transform: scale(1,1);}
+    to { transform: scale(1.5 , 1.5);}
+}
+@-webkit-keyframes zoomin {
+    from { transform: scale(1,1);}
+    to { transform: scale(1.5 , 1.5);}
+}
+@media screen and (max-width : 800px) {
+    .slider-item {
+        height: 500px;
+    }
+    .txt {
+        line-height: 25px;
+        top : 50%;
+        left : 50%;
+        transform: translate(-50%, -50%);
+        animation: pos2 2s;
+        -webkit-animation : pos2 2s;;
+    }
+    @keyframes pos2 {
+        from {top :35%}
+        to {top :50%}
+    }
+    @-webkit-keyframes pos2 {
+        from {top :35%}
+        to {top :50%}
+    }
+    .txt h1 {
+        font-size: 40px;
+    }
+    .txt p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .slider-item {
+        height: 300px;
+    }
+} 
+
+*, .header::after , .header::before {
+    position: relative;
+}
